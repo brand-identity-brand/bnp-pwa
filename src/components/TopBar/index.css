@@ -12,9 +12,6 @@
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-
-
-
 }
 
 .TopBar-LastStateArrow {
@@ -22,13 +19,133 @@
 }
 
 .TopBar-SearchBox {
+    /*cosmetic*/
     height: 27px;
     width: 70%;
     background-color: white;
     border-radius: 5px;
+    /*layout*/ 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
+
+
+.TopBar-SearchBox_isSearching {
+    width: calc(100% - 23px);
+    justify-content: space-between;
+}
+
+.TopBar-SearchBox-LogoCube_default {
+    height: 60%;
+    opacity: 50%;
+    /**/
+    margin-right: 7px;
+}
+
+
+
+.TopBar-SearchBox-LogoCube_isSearching {
+    height: 80%;
+    opacity: 100%;
+    /**/
+    margin-right: 7px;
+}
+
+.TopBar-SearchBox-LogoUrl_default {
+    height: 50%;
+    opacity: 50%;
+}
+
 
 .TopBar-UserIcon {
     height: 30px;
     width: 30px;
+}
+
+.hidden {
+    display: none;
+}
+
+.TopBar-SearchBox-input {
+    height: 80%;
+    width: 87%;
+    outline: none;
+    border: none;
+    /**/
+    margin-left: 7px;
+}
+/**/
+.TopBar-SearchBox_spotlight {
+    /*cosmetic*/
+    height: 27px;
+    width: 70%;
+    filter: invert(1); /*this will affect children components*/
+    /*layout*/ 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.TopBar-SearchBox-LogoUrl_spotlight {
+    height: 70%;
+}
+/*.TopBar-SearchBox-LogoCube_spotlight { not in use
+    height: 80%;
+    margin-right: 12px;
+    margin-top: 3px;
+}*/
+
+.TopBar-SearchBox-LogoCube_spotlight {
+    height: 32px;
+    margin-left: 12px;
+}
+
+.TopBar-div_spotlight {
+    height: 27%;
+    box-shadow: 0px 1px 10px -4px grey;
+    /*layout*/ 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.TopBar-div-div_WelcomeMessage_spotlight {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 50px;
+}
+.TopBar-div-div_spotlight {
+    width: 100%;
+    /*layout*/ 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.TopBar-div-input_spotlight {
+    height: 32px;
+    width: 80%;
+    font-size: large;
+    /*outline: none;*/border: none;
+    border-radius: 10px;
+    border-width: 1px;
+    
+    border-top-style: solid;
+    border-right-style: solid;
+    
+    border-left-style: solid;
+    border-bottom-style: solid;
+
+
+    /**/
+    margin-left: 7px;
+}
+
+.TopBar-SearchBox-TrendingDropdown_spotlight {
+    filter: invert(1);
+    width: 2%;
+    transform: rotate(0.75turn);
 }

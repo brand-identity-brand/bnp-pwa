@@ -1,0 +1,74 @@
+.PostCard {
+    /*size*/
+    width: 100%;
+    height: 27%;/*256px;*/
+    /*layout*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.PostCard-div_lepht {
+    /*size*/
+    width: 5px;
+    height: 100%;
+}
+.PostCard-div_left {
+    border: 1px solid green;
+    /*size*/
+    width: calc(70% - 5px);
+    height: 100%;
+    /*layout*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.PostCard-div_left_top {
+    border: 1px solid red;
+    /*size*/
+    width: 100%;
+    height: 10%;
+    /*layout*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.PostCard-div_right {
+    border: 1px solid green;
+    /*size*/
+    width: calc(30% - 5px);
+    height: 100%;
+    /*layout*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.PostCard-Author {
+    border: 1px solid blue;
+}
+.PostCard-Date {
+    border: 1px solid blue;
+}
+.PostCard-Title {
+    border: 1px solid blue;
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+
+.PostCard-Cover {
+    background-color: goldenrod;
+    /*size*/
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    /*layout*/
+}
+.PostCard-Save {
+    border: 1px solid blue;
+}

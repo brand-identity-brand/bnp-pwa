@@ -7,7 +7,7 @@ import BotBar from './components/BotBar';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <TopBar/>
       <Display/>
       <BotBar/>
