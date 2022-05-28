@@ -5,20 +5,23 @@ import PostCard from '../../components/PostCard';
 
 function Spotlight() {
   return (
-    <div className='Spotlight-master'>
-      <ul>
-        <li>
-          TopBar 3 states. animation transformation needed
-        </li>
-        <li>
-          spotlight searchbox could be an underline but that'll require an icon to indicate its a searchbox
-        </li>
-      </ul>
+    <div className='Spotlight'>
+      <h1 className='Spotlight-h1_featured'>Featured Posts</h1>
       <PostCard/>
       <PostCard/>
       <PostCard/>
       <PostCard/>
       <PostCard/>
+      <h1 className='Spotlight-h1_featured'>Hot Picks</h1>
+      <h1 className='Spotlight-h1_featured'>Featured Posts</h1>
+      <h1 className='Spotlight-h1_featured'>Featured Posts</h1>
+      <h1 className='Spotlight-h1_featured'>Featured Posts</h1>
+      <h1 className='Spotlight-h1_featured'>Featured Posts</h1>
+      <h1 className='Spotlight-h1_featured'>Featured Posts</h1>
+      <h1 className='Spotlight-h1_featured'>Featured Posts</h1>
+      <h1 className='Spotlight-h1_featured'>Featured Posts</h1>
+      <h1 className='Spotlight-h1_featured'>Featured Posts</h1>
+      <h1 className='Spotlight-h1_featured'>Featured Posts</h1>
     </div>
   );
 }

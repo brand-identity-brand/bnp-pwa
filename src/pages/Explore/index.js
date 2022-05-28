@@ -1,9 +1,12 @@
-//import './App.css';
+import './index.css';
+
 import PostCard from "../../components/PostCard";
+import Filter from '../../components/Filter';
 
 function Explore() {
   return (
-    <div>
+    <div className='Explore'>
+      <Filter/>
       <PostCard/>
       <PostCard/>
       <PostCard/>

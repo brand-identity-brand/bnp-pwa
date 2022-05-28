@@ -1,8 +1,9 @@
-//import './App.css';
+import './index.css';
 
 
 function Journal() {
-  return (<div>Journal</div>
+  return (
+    <div>Journal</div>
   );
 }
 

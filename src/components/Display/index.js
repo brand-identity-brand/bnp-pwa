@@ -15,6 +15,17 @@ function Display(){
                 <Route path="/explore" element={<Explore/>} />
                 <Route path="/journal" element={<Journal/>} />
                 <Route path="/market" element={<Market/>} />
+                <Route path="/" element={
+                <ul>
+                    <li>
+                    TopBar 3 states. animation transformation needed
+                    </li>
+                    <li>
+                    spotlight searchbox could be an underline but that'll require an icon to indicate its a searchbox
+                    </li>
+                </ul>
+                }
+                />
             </Routes>
         </section>
     )

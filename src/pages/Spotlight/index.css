@@ -1,3 +1,8 @@
-.Spotlight-master {
+.Spotlight {
     height: 100%;
+}
+
+.Spotlight-h1_featured {
+    text-align: left;
+    margin-left: 5%;
 }

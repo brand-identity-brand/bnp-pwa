@@ -1,8 +1,12 @@
+import ProductRoll from '../../components/ProductRoll';
 import './index.css';
 
 
 function Market() {
-  return (<div className='Market-master'>Market</div>
+  return (
+    <div className='Market'>
+      <ProductRoll/>
+    </div>
   );
 }
 
