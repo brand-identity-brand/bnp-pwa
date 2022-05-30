@@ -1,12 +1,30 @@
 import './index.css';
 
-function ProductRoll(){
-
+/**
+ * data as an array of product objects
+ * {price, title, sale, blockStyle, image}
+ * 
+ * there are 4 possible blockStyle:
+ *  small square (1layout)
+ *  large square (2layouts)
+ *  verticle rectangle (3layouts)
+ *  horizontal rectangle (2layouts)
+ * 
+ * read by 3 blocks.
+ * if all small square || 1 h-rectangle || 2 h-rectangle
+ * 
+ * if 1 large Square or 
+ * 
+ * @param {*} props 
+ * @returns 
+ */
+function ProductRoll(props){
+    const {
+        data,
+    } = props
     return(
         <div className='ProductRoll' style={gridSpec}>
-            <ProductCard gridArea={'A'}>A</ProductCard>
-            <ProductCard gridArea={'B'}>B</ProductCard>
-            <ProductCard gridArea={'C'}>C</ProductCard>
+
         </div>
     )
 }
@@ -21,6 +39,19 @@ const gridSpec = {
 /**
  *           
  */
+ function ProductCardGroup(props) {
+    const {
+        className,
+        type,
+        children
+    } = props;
+
+    return (
+        <div className={`ProductCardGroup ${className}`} >
+            {children}
+        </div>
+    )
+}
 
 function ProductCard(props) {
     const {
