@@ -1,14 +1,16 @@
 .ProductRoll {
     /*size*/
     width: 100%;
-    height: 100%;
+    height: calc(100% - 64px);
     /*layout*/
-    display: grid;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    display: flex;
+    flex-direction: row;
+    
 }
 
 .ProductCardGroup {
+    width: 100%;
+    height: 33vw;
     /*layout*/
     display: grid;
     grid-column-gap: 0px;
@@ -16,6 +18,7 @@
 }
 
 .ProductCardGroup_3by1 {
+    aspect-ratio: 3 / 1;
     /*layout*/
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
@@ -33,6 +36,8 @@
 .type2_1 { grid-area: 1 / 3 / 2 / 4; }
 
 .ProductCardGroup_3by2 {
+    aspect-ratio: 3 / 2;
+    height: 66vw;
     /*layout*/
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -66,11 +71,11 @@ DEC
 ABC
 DBE
 */
-.div12 { grid-area: 1 / 1 / 2 / 2; }
-.div13 { grid-area: 1 / 2 / 3 / 3; }
-.div14 { grid-area: 1 / 3 / 2 / 4; }
-.div15 { grid-area: 2 / 1 / 3 / 2; }
-.div16 { grid-area: 2 / 3 / 3 / 4; }
+.type6_0 { grid-area: 1 / 1 / 2 / 2; }
+.type6_1 { grid-area: 1 / 2 / 3 / 3; }
+.type6_2 { grid-area: 1 / 3 / 2 / 4; }
+.type6_3 { grid-area: 2 / 1 / 3 / 2; }
+.type6_4 { grid-area: 2 / 3 / 3 / 4; }
 /**
 ABC
 ADE
@@ -86,4 +91,40 @@ ADE
 .ProductCard {
     /*size*/
     aspect-ratio: 1 / 1;
+}
+
+
+
+.layered {
+    display: grid;
+
+    /* Set horizontal alignment of items in, case they have a different width. */
+    /* justify-items: start | end | center | stretch (default); */
+    justify-items: start;
+
+    /* Set vertical alignment of items, in case they have a different height. */
+    /* align-items: start | end | center | stretch (default); */
+    align-items: start;
+}
+
+.layered > * {
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+.PriceTag {
+    width: 69px;
+}
+
+.PriceTag-price {
+    text-align: right;
+    width: 100%;
+    font-family: 'Cutive Mono', monospace;    top: 50%;
+    transform: translate(0, -50%);
+    position: relative;
+    color: grey;
+    letter-spacing: -1px;
+}
+.PriceTag-price > span {
+    margin-right: 8px;
 }

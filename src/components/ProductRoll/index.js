@@ -1,4 +1,6 @@
 import './index.css';
+import PriceStickerWhite from './PNG/price_sticker_white.png';
+import {getRandomInt} from '../../common/helpers';
 
 /**
  * data as an array of product objects
@@ -22,19 +24,37 @@ function ProductRoll(props){
     const {
         data,
     } = props
+    console.log(data)
     return(
-        <div className='ProductRoll' style={gridSpec}>
-            
+        <div className='ProductRoll'>
+            {data.map((el, index)=>{
+                const parentCss = el.style[0];
+                const childCss = el.style[1];
+                return (
+                    <ProductCardGroup className={parentCss} key={index}>
+                        {el.data.map((el)=>{
+                            return(
+                                <ProductCard className={`${childCss}${el.id}`} key={el.SKU}
+                                    price = {el.price}
+                                >
+                                    <img title={el.sku} alt={el.sku} src={el.cover}
+                                        style={{
+                                            width: '100%',
+                                            height: '100%',
+                                            contentFit: 'fill',
+                                        }}
+                                    />
+                                </ProductCard>
+                            )
+                        })}
+                    </ProductCardGroup>
+                )
+            })}
         </div>
     )
 }
 
 export default ProductRoll
-
-const gridSpec = {
-    gridTemplateColumns: 'repeat(3, 1fr [col])',
-    gridTemplateRows: 'repeat(2, 1fr [row])',
-}
 
 /**
  *           
@@ -42,7 +62,6 @@ const gridSpec = {
  function ProductCardGroup(props) {
     const {
         className,
-        type,
         children
     } = props;
 
@@ -55,19 +74,94 @@ const gridSpec = {
 
 function ProductCard(props) {
     const {
-        gridArea,
-        children
+        className,
+        children,
+        price,
+        discount,
     } = props;
 
-    const style = {
-        border: '1px solid black',
-        backgroudColor: 'black',
-        gridArea: gridArea,
-    }
-
     return (
-        <div className='ProductCard' style={style}>
+        <div className={`layered ${className}`} style={{height:'100%',width:'100%'}}
+        >
             {children}
+            <PriceTag price={price} discount={discount}/>
         </div>
     )
+}
+
+function PriceTag(props){
+    const {
+        price,
+        discount
+    } = props;
+    //const isPos = getRandomInt(0,40);
+    const deg = getRandomInt(0,40);
+    const x = getRandomInt(3,3);
+    const y = getRandomInt(3,15);
+    console.log( [deg, x, y])
+    return(
+        <div className='PriceTag layered'
+            style={{
+                transform: `rotate(-${deg}deg) translate(${x}vw, ${y}vw)`,
+                top: '100px',
+            }}
+        >
+            <img 
+                title={'price sticker'}
+                alt={'price sticker'}
+                src={PriceStickerWhite}
+                style={{
+                    width: '100%',
+                    height: '100%',
+                    contentFit: 'fill',
+                }}
+            />
+            <div className='PriceTag-price'><span>{price}</span></div>
+        </div>
+    )
+}
+
+ProductRoll.defaultProps = {
+    data: [
+        {
+            style: ['ProductCardGroup_3by2', 'type6_'],
+            data: [        
+                {
+                    id: 0,
+                    SKU: 'L012FKROWE',
+                    cover: 'https://picsum.photos/300/300',
+                    size: [1,1],
+                    price: '120.69',
+                },
+                {
+                    id: 1,
+                    SKU: 'L012123456',
+                    cover: 'https://picsum.photos/300/600',
+                    size: [1,2],
+                    price: '452.69',
+                },
+                {
+                    id: 2,
+                    SKU: 'L012FK4444',
+                    cover: 'https://picsum.photos/300/300',
+                    size: [1,1],
+                    price: '2.60',
+                },
+                {
+                    id: 3,
+                    SKU: 'L016666666',
+                    cover: 'https://picsum.photos/300/300',
+                    size: [1,1],
+                    price: '0.69',
+                },        
+                {
+                    id: 4,
+                    SKU: 'L012FK67WE',
+                    cover: 'https://picsum.photos/300/300',
+                    size: [1,1],
+                    price: '12.69',
+                }
+            ]
+        }
+    ]
 }
