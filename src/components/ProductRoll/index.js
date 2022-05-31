@@ -24,7 +24,7 @@ function ProductRoll(props){
     } = props
     return(
         <div className='ProductRoll' style={gridSpec}>
-
+            
         </div>
     )
 }
