@@ -36,12 +36,16 @@ function ProductRoll(props){
                             return(
                                 <ProductCard className={`${childCss}${el.id}`} key={el.SKU}
                                     price = {el.price}
+                                    style={{
+                                        width: '100%',
+                                        height: '100%',
+                                    }}
                                 >
                                     <img title={el.sku} alt={el.sku} src={el.cover}
                                         style={{
                                             width: '100%',
                                             height: '100%',
-                                            contentFit: 'fill',
+                                            objectFit: 'cover',
                                         }}
                                     />
                                 </ProductCard>
@@ -81,7 +85,7 @@ function ProductCard(props) {
     } = props;
 
     return (
-        <div className={`layered ${className}`} style={{height:'100%',width:'100%'}}
+        <div className={`layered ${className}`}
         >
             {children}
             <PriceTag price={price} discount={discount}/>
@@ -94,16 +98,18 @@ function PriceTag(props){
         price,
         discount
     } = props;
-    //const isPos = getRandomInt(0,40);
+    const isPosi = Math.random() < 0.5; //50% probability of getting true
     const deg = getRandomInt(0,40);
-    const x = getRandomInt(3,3);
-    const y = getRandomInt(3,15);
+    const x = getRandomInt(1,20); //20 when deg 40
+    const y = getRandomInt(2,20); //20 when deg 40
     console.log( [deg, x, y])
     return(
         <div className='PriceTag layered'
             style={{
-                transform: `rotate(-${deg}deg) translate(${x}vw, ${y}vw)`,
-                top: '100px',
+                transform: `rotate(${isPosi? '' : '-'}${deg}deg)`,
+                position: 'relative',
+                top: `${y}vw`,
+                left: `${x}vw`
             }}
         >
             <img 
@@ -113,7 +119,7 @@ function PriceTag(props){
                 style={{
                     width: '100%',
                     height: '100%',
-                    contentFit: 'fill',
+                    objectFit: 'cover',
                 }}
             />
             <div className='PriceTag-price'><span>{price}</span></div>
@@ -129,7 +135,7 @@ ProductRoll.defaultProps = {
                 {
                     id: 0,
                     SKU: 'L012FKROWE',
-                    cover: 'https://picsum.photos/300/300',
+                    cover: 'https://picsum.photos/300/600',
                     size: [1,1],
                     price: '120.69',
                 },
@@ -161,6 +167,72 @@ ProductRoll.defaultProps = {
                     size: [1,1],
                     price: '12.69',
                 }
+            ]
+        },
+        {
+            style: ['ProductCardGroup_3by2', 'type5_'],
+            data: [        
+                {
+                    id: 0,
+                    SKU: 'L012FKROWE',
+                    cover: 'https://picsum.photos/300/300',
+                    size: [1,1],
+                    price: '120.69',
+                },
+                {
+                    id: 1,
+                    SKU: 'L012123456',
+                    cover: 'https://picsum.photos/300/300',
+                    size: [1,1],
+                    price: '452.69',
+                },
+                {
+                    id: 2,
+                    SKU: 'L012FK4444',
+                    cover: 'https://picsum.photos/300/600',
+                    size: [1,2],
+                    price: '2.60',
+                },
+                {
+                    id: 3,
+                    SKU: 'L016666666',
+                    cover: 'https://picsum.photos/300/300',
+                    size: [1,1],
+                    price: '0.69',
+                },        
+                {
+                    id: 4,
+                    SKU: 'L012FK67WE',
+                    cover: 'https://picsum.photos/300/300',
+                    size: [1,1],
+                    price: '12.69',
+                }
+            ]
+        },
+        {
+            style: ['ProductCardGroup_3by1', 'type3_'],
+            data: [        
+                {
+                    id: 0,
+                    SKU: 'L012FKROWE',
+                    cover: 'https://picsum.photos/300/300',
+                    size: [1,1],
+                    price: '120.69',
+                },
+                {
+                    id: 1,
+                    SKU: 'L012123456',
+                    cover: 'https://picsum.photos/300/300',
+                    size: [1,1],
+                    price: '452.69',
+                },
+                {
+                    id: 2,
+                    SKU: 'L012FK4444',
+                    cover: 'https://picsum.photos/300/600',
+                    size: [2,2],
+                    price: '2.60',
+                },
             ]
         }
     ]

@@ -4,13 +4,13 @@
     height: calc(100% - 64px);
     /*layout*/
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     
 }
 
 .ProductCardGroup {
     width: 100%;
-    height: 33vw;
+    
     /*layout*/
     display: grid;
     grid-column-gap: 0px;
@@ -37,7 +37,6 @@
 
 .ProductCardGroup_3by2 {
     aspect-ratio: 3 / 2;
-    height: 66vw;
     /*layout*/
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -46,36 +45,36 @@
 ABB
 CBB
 */
-.type3_0 { grid-area: 1 / 1 / 2 / 2; }
-.type3_1 { grid-area: 1 / 2 / 3 / 4; }
-.type3_2 { grid-area: 2 / 1 / 3 / 2; }
+.type3_0 { grid-area: 1 / 1 / 2 / 2; aspect-ratio: 1 / 1; }
+.type3_1 { grid-area: 1 / 2 / 3 / 4; aspect-ratio: 1 / 1; }
+.type3_2 { grid-area: 2 / 1 / 3 / 2; aspect-ratio: 2 / 2; }
 
 
 /**
 AAB
 AAC
 */
-.type4_0 { grid-area: 1 / 1 / 3 / 3; }
-.type4_1 { grid-area: 1 / 3 / 2 / 4; }
-.type4_2 { grid-area: 2 / 3 / 3 / 4; }
+.type4_0 { grid-area: 1 / 1 / 3 / 3; aspect-ratio: 2 / 2; }
+.type4_1 { grid-area: 1 / 3 / 2 / 4; aspect-ratio: 1 / 1; }
+.type4_2 { grid-area: 2 / 3 / 3 / 4; aspect-ratio: 1 / 1; }
 /**
 ABC
 DEC
 */
-.type5_0 { grid-area: 1 / 1 / 2 / 2; }
-.div8 { grid-area: 1 / 2 / 2 / 3; }
-.div9 { grid-area: 1 / 3 / 3 / 4; }
-.div10 { grid-area: 2 / 1 / 3 / 2; }
-.div11 { grid-area: 2 / 2 / 3 / 3; }
+.type5_0 { grid-area: 1 / 1 / 2 / 2; aspect-ratio: 1 / 1; }
+.type5_1 { grid-area: 1 / 2 / 2 / 3; aspect-ratio: 1 / 1; }
+.type5_2 { grid-area: 1 / 3 / 3 / 4; aspect-ratio: 1 / 2; }
+.type5_3 { grid-area: 2 / 1 / 3 / 2; aspect-ratio: 1 / 1; }
+.type5_4 { grid-area: 2 / 2 / 3 / 3; aspect-ratio: 1 / 1; }
 /**
 ABC
 DBE
 */
-.type6_0 { grid-area: 1 / 1 / 2 / 2; }
-.type6_1 { grid-area: 1 / 2 / 3 / 3; }
-.type6_2 { grid-area: 1 / 3 / 2 / 4; }
-.type6_3 { grid-area: 2 / 1 / 3 / 2; }
-.type6_4 { grid-area: 2 / 3 / 3 / 4; }
+.type6_0 { grid-area: 1 / 1 / 2 / 2; aspect-ratio: 1 / 1; }
+.type6_1 { grid-area: 1 / 2 / 3 / 3; aspect-ratio: 1 / 2; }
+.type6_2 { grid-area: 1 / 3 / 2 / 4; aspect-ratio: 1 / 1; }
+.type6_3 { grid-area: 2 / 1 / 3 / 2; aspect-ratio: 1 / 1; }
+.type6_4 { grid-area: 2 / 3 / 3 / 4; aspect-ratio: 1 / 1; }
 /**
 ABC
 ADE
