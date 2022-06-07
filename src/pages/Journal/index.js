@@ -1,9 +1,13 @@
 import './index.css';
-
+import Filter from '../../components/Filter';
+import TabsBar from '../../components/TabsBar';
 
 function Journal() {
   return (
-    <div>Journal</div>
+    <div>
+      <Filter/>
+      <TabsBar/>
+    </div>
   );
 }
 

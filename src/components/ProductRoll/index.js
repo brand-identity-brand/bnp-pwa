@@ -31,24 +31,22 @@ function ProductRoll(props){
                 const parentCss = el.style[0];
                 const childCss = el.style[1];
                 return (
-                    <ProductCardGroup className={parentCss} key={index}>
+                    <ProductCardGroup 
+                        className={parentCss} 
+                        key={index}
+                    >
                         {el.data.map((el)=>{
                             return(
-                                <ProductCard className={`${childCss}${el.id}`} key={el.SKU}
+                                <ProductCard 
+                                    className={`${childCss}${el.id}`} 
+                                    key={el.SKU}
                                     price = {el.price}
-                                    style={{
-                                        width: '100%',
-                                        height: '100%',
-                                    }}
-                                >
-                                    <img title={el.sku} alt={el.sku} src={el.cover}
-                                        style={{
-                                            width: '100%',
-                                            height: '100%',
-                                            objectFit: 'cover',
-                                        }}
-                                    />
-                                </ProductCard>
+
+                                    title={el.SKU}
+                                    alt={el.SKU}
+                                    //src={el.cover}
+                                    src={`https://picsum.photos/seed/products${el.SKU}/600/600`}
+                                />
                             )
                         })}
                     </ProductCardGroup>
@@ -79,20 +77,38 @@ export default ProductRoll
 function ProductCard(props) {
     const {
         className,
-        children,
+        //price tag
         price,
         discount,
+        // product cover image
+        title,
+        alt,
+        src
     } = props;
 
     return (
         <div className={`layered ${className}`}
         >
-            {children}
+            <ProductCoverImage title={title} alt={alt} src={src} />
             <PriceTag price={price} discount={discount}/>
         </div>
     )
 }
-
+function ProductCoverImage(props){
+    const {
+        title,
+        alt,
+        src
+    } = props;
+    return(<>
+        <img className={'ProductCoverImage'} 
+            title={title} 
+            alt={alt} 
+            src={src}
+        />
+        <div className='ProductCoverImage-shadow'></div>
+    </>)
+}
 function PriceTag(props){
     const {
         price,
@@ -107,7 +123,6 @@ function PriceTag(props){
         <div className='PriceTag layered'
             style={{
                 transform: `rotate(${isPosi? '' : '-'}${deg}deg)`,
-                position: 'relative',
                 top: `${y}vw`,
                 left: `${x}vw`
             }}
@@ -116,11 +131,6 @@ function PriceTag(props){
                 title={'price sticker'}
                 alt={'price sticker'}
                 src={PriceStickerWhite}
-                style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                }}
             />
             <div className='PriceTag-price'><span>{price}</span></div>
         </div>
@@ -135,14 +145,14 @@ ProductRoll.defaultProps = {
                 {
                     id: 0,
                     SKU: 'L012FKROWE',
-                    cover: 'https://picsum.photos/300/600',
+                    cover: 'https://picsum.photos/seed/a/300/600',
                     size: [1,1],
                     price: '120.69',
                 },
                 {
                     id: 1,
                     SKU: 'L012123456',
-                    cover: 'https://picsum.photos/300/600',
+                    cover: 'https://picsum.photos/seed/b/300/600',
                     size: [1,2],
                     price: '452.69',
                 },

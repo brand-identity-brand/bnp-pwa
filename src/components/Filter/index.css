@@ -7,6 +7,8 @@
     flex-direction: row;
     justify-content: space-evenly;
     /*align-items: center;*/
+    /**/
+    box-shadow: 0px 1px 10px -4px grey;
 }
 
 .Filter-div_left {
